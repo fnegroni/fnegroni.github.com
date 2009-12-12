@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 8.5.0" />
-<title>eWEB - literate programming in AsciiDoc</title>
+<meta name="generator" content="AsciiDoc 8.4.5" />
+<title>Filippo Erik Negroni on GitHub</title>
 <style type="text/css">
 /* Debug borders */
 p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
@@ -118,7 +118,7 @@ div#preamble {
 div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
 div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
 div.admonitionblock {
-  margin-top: 0.25em;
+  margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
 div.admonitionblock {
@@ -381,127 +381,24 @@ div.exampleblock-content {
 /* IE6 sets dynamically generated links as visited. */
 div#toc a:visited { color: blue; }
 </style>
-<script type="text/javascript">
-/*<![CDATA[*/
-window.onload = function(){generateToc(2)}
-/* Author: Mihai Bazon, September 2002
- * http://students.infoiasi.ro/~mishoo
- *
- * Table Of Content generator
- * Version: 0.4
- *
- * Feel free to use this script under the terms of the GNU General Public
- * License, as long as you do not remove or alter this notice.
- */
-
- /* modified by Troy D. Hanson, September 2006. License: GPL */
- /* modified by Stuart Rackham, October 2006. License: GPL */
-
-function getText(el) {
-  var text = "";
-  for (var i = el.firstChild; i != null; i = i.nextSibling) {
-    if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
-      text += i.data;
-    else if (i.firstChild != null)
-      text += getText(i);
-  }
-  return text;
-}
-
-function TocEntry(el, text, toclevel) {
-  this.element = el;
-  this.text = text;
-  this.toclevel = toclevel;
-}
-
-function tocEntries(el, toclevels) {
-  var result = new Array;
-  var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
-  // Function that scans the DOM tree for header elements (the DOM2
-  // nodeIterator API would be a better technique but not supported by all
-  // browsers).
-  var iterate = function (el) {
-    for (var i = el.firstChild; i != null; i = i.nextSibling) {
-      if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
-        var mo = re.exec(i.tagName)
-        if (mo)
-          result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
-        iterate(i);
-      }
-    }
-  }
-  iterate(el);
-  return result;
-}
-
-// This function does the work. toclevels = 1..4.
-function generateToc(toclevels) {
-  var toc = document.getElementById("toc");
-  var entries = tocEntries(document.getElementsByTagName("body")[0], toclevels);
-  for (var i = 0; i < entries.length; ++i) {
-    var entry = entries[i];
-    if (entry.element.id == "")
-      entry.element.id = "toc" + i;
-    var a = document.createElement("a");
-    a.href = "#" + entry.element.id;
-    a.appendChild(document.createTextNode(entry.text));
-    var div = document.createElement("div");
-    div.appendChild(a);
-    div.className = "toclevel" + entry.toclevel;
-    toc.appendChild(div);
-  }
-  if (entries.length == 0)
-    document.getElementById("header").removeChild(toc);
-}
-/*]]>*/
-</script>
 </head>
 <body>
 <div id="header">
-<h1>eWEB - literate programming in AsciiDoc</h1>
+<h1>Filippo Erik Negroni on GitHub</h1>
 <span id="author">Filippo Erik Negroni</span><br />
 <span id="email"><tt>&lt;<a href="mailto:f.e.negroni@googlemail.com">f.e.negroni@googlemail.com</a>&gt;</tt></span><br />
-<span id="revdate">Version 9.10</span>
-<div id="toc">
-  <div id="toctitle">Table of Contents</div>
-  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
 </div>
-</div>
-<div id="preamble">
+<h2 id="_hello">Hello</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Make AsciiDoc part of your literate programming tool set.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">eWEB is Copyright 2009 Filippo Erik Negroni and is free software released and distributed under the terms and conditions of the GNU General Public License, Version 3 or any later version.<br />
-Hosted by <span class="image">
-<a class="image" href="http://sourceforge.net/projects/eweb">
-<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=271508&amp;type=13" alt="Get eWEB - literate programming in AsciiDoc at SourceForge.net. Fast, secure and Free Open Source software downloads" width="120" height="30" />
-</a>
-</span></td>
-</tr></table>
-</div>
-</div>
-</div>
-<h2 id="_for_the_impatient">For the impatient</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>To obtain a copy, you must download the files published in <a href="http://sourceforge.net/projects/eweb/files/">the sourceforge Files area</a>.</p></div>
-<div class="paragraph"><p>You can also visit <a href="http://www.sf.net/projects/eweb">our project&#8217;s page on sourceforge.net</a> where you will find additional resources such as our Git repository, a bug and feature tracker, and can ask for help or discuss topics on our forums.</p></div>
-</div>
-<h2 id="_what_is_it">What is it?</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>With eWEB you can weave and tangle literate programs written as AsciiDoc documents, using embedded WEB code snippets.</p></div>
-<div class="paragraph"><p>The entire program is written in AsciiDoc, and the code parts (known as code snippets) are written within listing blocks.</p></div>
-<div class="paragraph"><p>A literate program written in eWEB format is a perfectly formed AsciiDoc document. Should eWEB disappear as a tool, the original document is still perfectly rendered by AsciiDoc. AsciiDoc documents themselves are also perfectly readable in source form.</p></div>
-<div class="paragraph"><p>At the core of eWEB there are two tools: <a href="etangle.html">Etangle</a> and <a href="eweave.html">Eweave</a>.</p></div>
-<div class="paragraph"><p>Etangle extracts and reorders the code snippets found in the program document. It produces source code modules which can then be processed by your application development toolchain.</p></div>
-<div class="paragraph"><p>Eweave inserts hyperlinks within the code snippets so that the rendered code snippets can be cross referenced by your readers.</p></div>
+<div class="paragraph"><p>My name is Filippo Erik Negroni, and I leave in the UK.</p></div>
+<div class="paragraph"><p>I am a professional software engineer, who believes in open source software and collaboration tools.</p></div>
+<div class="paragraph"><p>My hobbies include literate programming, learning new programming languages, and sports.</p></div>
+<div class="paragraph"><p>I am married, have a son, and do my bit for the environment by commuting to work by bicycle.</p></div>
+<div class="paragraph"><p>The project I am currently working on at the moment is <a href="verbose">Verbose</a>.</p></div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2009-10-07 23:17:19 BST
+Last updated 2009-12-12 13:50:42 BST
 </div>
 </div>
 </body>
