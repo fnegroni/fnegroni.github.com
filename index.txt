@@ -1,0 +1,32 @@
+eWEB - literate programming in AsciiDoc
+=======================================
+Filippo Erik Negroni <f.e.negroni@googlemail.com>
+Version 9.10
+
+Make AsciiDoc part of your literate programming tool set.
+
+NOTE: eWEB is Copyright 2009 Filippo Erik Negroni and is free software released and distributed under the terms and conditions of the GNU General Public License, Version 3 or any later version. +
+Hosted by image:http://sflogo.sourceforge.net/sflogo.php?group_id=271508&amp;type=13["Get eWEB - literate programming in AsciiDoc at SourceForge.net. Fast, secure and Free Open Source software downloads",width="120",height="30",link="http://sourceforge.net/projects/eweb"]
+
+
+For the impatient
+-----------------
+To obtain a copy, you must download the files published in http://sourceforge.net/projects/eweb/files/[the sourceforge Files area].
+
+You can also visit http://www.sf.net/projects/eweb[our project's page on sourceforge.net] where you will find additional resources such as our Git repository, a bug and feature tracker, and can ask for help or discuss topics on our forums. 
+
+
+What is it?
+-----------
+With eWEB you can weave and tangle literate programs written as AsciiDoc documents, using embedded WEB code snippets.
+
+The entire program is written in AsciiDoc, and the code parts (known as code snippets) are written within listing blocks.
+
+A literate program written in eWEB format is a perfectly formed AsciiDoc document. Should eWEB disappear as a tool, the original document is still perfectly rendered by AsciiDoc. AsciiDoc documents themselves are also perfectly readable in source form.
+
+At the core of eWEB there are two tools: link:etangle.html[Etangle] and link:eweave.html[Eweave].
+
+Etangle extracts and reorders the code snippets found in the program document. It produces source code modules which can then be processed by your application development toolchain.
+
+Eweave inserts hyperlinks within the code snippets so that the rendered code snippets can be cross referenced by your readers.
+
