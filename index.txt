@@ -9,8 +9,6 @@ My name is Filippo Erik Negroni, and I leave in the UK.
 
 I am a professional software engineer, who believes in open source software and collaboration tools.
 
-My hobbies include literate programming, learning new programming languages, and sports.
-
 I am married, have a son, and do my bit for the environment by commuting to work by bicycle.
 
-The project I am currently working on at the moment is link:verbose[Verbose].
+The project I am currently working on at the moment is link:linux-sbs-module-fix[Fix for SBS module on Linux].
