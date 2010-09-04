@@ -11,4 +11,4 @@ I am a professional software engineer, who believes in open source software and 
 
 I am married, have a son, and do my bit for the environment by commuting to work by bicycle.
 
-The project I am currently working on at the moment is link:linux-sbs-module-fix[Fix for SBS module on Linux].
+I am currently working on Sugo, a unit test framework for system routines.
